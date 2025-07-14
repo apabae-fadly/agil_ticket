@@ -23,6 +23,8 @@ echo "Creating storage link..."
 php artisan storage:link
 
 echo "Migrating database..."
+echo "Waiting for MySQL to be ready..."
+sleep 10
 php artisan migrate --force
 
 echo "Seeding database..."
