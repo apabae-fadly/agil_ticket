@@ -22,4 +22,10 @@ npm run build
 echo "Creating storage link..."
 php artisan storage:link
 
+echo "Migrating database..."
+php artisan migrate --force
+
+echo "Seeding database..."
+php artisan db:seed --force
+
 echo "Pre-deploy completed successfully!" 
