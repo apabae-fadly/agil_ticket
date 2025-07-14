@@ -22,10 +22,18 @@ npm run build
 echo "Creating storage link..."
 php artisan storage:link
 
-echo "Migrating database..."
+echo "Config clear..."
+php artisan config:clear
+php artisan cache:clear
+
 echo "Waiting for MySQL to be ready..."
-sleep 10
+sleep 20
+
+echo "Migrating database..."
 php artisan migrate --force
+
+echo "Migration status:"
+php artisan migrate:status
 
 echo "Seeding database..."
 php artisan db:seed --force
