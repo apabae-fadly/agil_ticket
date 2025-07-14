@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-main {
+    @apply bg-brown-600 text-cream-50 font-semibold rounded-lg px-5 py-2 shadow-md btn-animate hover:bg-brown-700 hover:text-gold-400 transition;
+  }
+  .btn-secondary {
+    @apply bg-cream-400 text-brown-900 font-semibold rounded-lg px-5 py-2 shadow btn-animate hover:bg-cream-500 hover:text-brown-800 transition;
+  }
+  .card {
+    @apply bg-cream-50 border border-brown-100 rounded-2xl shadow-lg p-6;
+  }
+  .input-main {
+    @apply border-brown-300 focus:border-brown-500 focus:ring-brown-400 rounded-md shadow-sm;
+  }
+  .table-main {
+    @apply bg-cream-100 text-brown-900 rounded-lg overflow-hidden shadow;
+  }
+  .table-main th {
+    @apply bg-brown-600 text-cream-50 font-semibold;
+  }
+  .table-main td {
+    @apply border-b border-brown-100;
+  }
+  .alert-success {
+    @apply bg-cream-200 border-l-4 border-gold-500 text-brown-900 p-4 rounded shadow;
+  }
+  .alert-error {
+    @apply bg-red-100 border-l-4 border-red-500 text-red-900 p-4 rounded shadow;
+  }
+  .alert-warning {
+    @apply bg-yellow-100 border-l-4 border-yellow-500 text-yellow-900 p-4 rounded shadow;
+  }
+  .alert-info {
+    @apply bg-cream-100 border-l-4 border-brown-400 text-brown-800 p-4 rounded shadow;
+  }
+  .btn-animate {
+    @apply transition transform duration-200 ease-in-out;
+  }
+}
+
+@layer utilities {
+  .gradient-bg {
+    background: linear-gradient(-45deg, #3b82f6, #8b5cf6, #ec4899, #ef4444);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+  }
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  .fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .floating {
+    animation: floating 3s ease-in-out infinite;
+  }
+  @keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+}
